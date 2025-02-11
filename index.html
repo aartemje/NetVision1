@@ -1,0 +1,356 @@
+<!DOCTYPE html> 
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetVision</title>
+    <link rel="icon" type="image/png" href="Techonology.png">
+    
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            background: #1a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            animation: slideDown .7s ease-out 0ms 1 normal forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        header h1 {
+            font-size: 28px;
+            color: #ff9800;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #ff9800;
+            color: #121212;
+            box-shadow: 0 0 10px #ff9800;
+        }
+
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ff9800;
+            text-shadow: 0 0 10px #ff9800;
+        }
+
+        p {
+            font-size: 20px;
+            color: #e0e0e0;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .video-section video {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .form-section {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-section h3 {
+            margin-bottom: 20px;
+            color: #ff9800;
+        }
+
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-section input, .form-section button {
+            margin-bottom: 15px;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .form-section input {
+            background: #333;
+            color: #ffffff;
+        }
+
+        .form-section button {
+            background: #ff9800;
+            color: #121212;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-section button:hover {
+            background: #e68900;
+            box-shadow: 0 0 10px #ff9800;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            background: #1a1a1a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff9800;
+        }
+
+        .timeline-item h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ff9800;
+        }
+
+        .timeline-item p {
+            font-size: 18px;
+            color: #e0e0e0;
+        }
+
+        .extra-info {
+            display: none;
+            padding-top: 10px;
+            background-color: #333;
+            margin-top: 5px;
+            border-radius: 4px;
+            color: #e0e0e0;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease-out;
+        }
+
+        .extra-info.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NetVision</h1>
+        <nav>
+            <ul>
+                <li><a href="#hjem">Hjem</a></li>
+                <li><a href="#teknologi">Teknologi</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#registrering">Registrering</a></li>
+                <li><a href="#tidslinje">Tidslinje</a></li>
+                <li><a href="artikler.html">Artikler</a></li>
+                <li><a href="dagens-nytt.html">Dagens Nytt</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hjem">
+        <h2>Velkommen til Framtiden</h2>
+        <p>Utforsk teknologien og forstå hvordan internett former vår verden.</p>
+        <br>
+        <p>Her for du lære om internett og mye mer, <b>sett i gang og utforsk!</b></p>
+    </section>
+
+    <section id="teknologi">
+        <h2>Om Teknologi og Internett</h2>
+        <p>Internett er et stort nettverk som kobler sammen millioner av datamaskiner, telefoner og andre enheter over hele verden. Det gjør det mulig for folk å kommunisere, dele informasjon og få tilgang til kunnskap raskt.</p>
+        <p>Internett hjelper også med å skape nye ideer og muligheter. For eksempel gjør det at vi kan bruke sosiale medier, lagre filer i skyen og finne informasjon på nettet når som helst.</p>
+    </section>
+    <section id="AI">
+        <h2>Kunstig Intelligens</h2>
+        <p> AI har utviklet seg raskt de siste årene, og for noen år siden begynte det å få mer oppmerksomhet. Teknologien har kommet langt på kort tid, og plutselig ser vi AI i mange deler av livet vårt. Fra smarttelefoner som kan forstå stemmen vår, til anbefalinger på Netflix og musikk som spilles av AI, er det blitt en stor del av hverdagen.</p>
+        <p>I dag bruker nesten alle AI, enten de vet det eller ikke. Den finnes i alt fra sosiale medier til nettbutikker som vet hva vi liker å kjøpe. AI er blitt så vanlig at det virker som om det har tatt over på en måte, og utviklingen går raskt videre. Vi kan forvente at AI vil være enda mer integrert i livet vårt i fremtiden, og det gir både spennende muligheter og utfordringer.</p>
+    </section>
+
+    <section id="dagensnytt">
+        <h2>Dagens Nytt</h2>
+        <p>Her vil du finne dagens nyheter og oppdateringer innen teknologi.</p>
+    </section>
+    
+
+    <section id="video" class="video-section">
+        <h2>Introduksjon til Internett (Podkast)</h2>
+        <video controls>
+            <source src="Podkast.mp4.mp4" type="video/mp4">
+            Nettleseren din støtter ikke videoavspilling.
+        </video>
+    </section>
+
+    <section id="registrering" class="form-section">
+        <h3>Vil du være først med de nyeste nyhetene og oppdateringene? Bli med nå!</h3>
+        <form action="velkommen.html" method="GET">
+            <input type="text" placeholder="Din E-post" required>
+            <input type="password" placeholder="Passord" required>
+            <input type="username" placeholder="Navn" required>
+            <button type="submit">Registrer</button>
+        </form>
+    </section>
+
+
+
+    <section id="tidslinje" class="timeline">
+        <h2>Internettets Historie</h2>
+        <div class="timeline-item" onclick="toggleInfo('info1')">
+            <h4>1960-tallet</h4>
+            <p>ARPANET ble utviklet for å koble datamaskiner sammen.</p>
+            <div id="info1" class="extra-info">
+                <p>ARPANET var det første nettet som koblet sammen datamaskiner over lange avstander. Det ble laget av det amerikanske militæret på 1960-tallet for å dele informasjon mellom forskere og universiteter. Dette la grunnlaget for dagens internett.</p>
+            </div>
+        </div>
+        <div class="timeline-item" onclick="toggleInfo('info2')">
+            <h4>1980-tallet</h4>
+            <p>TCP/IP ble standard protokoll for internett.</p>
+            <div id="info2" class="extra-info">
+                <p>Den nye protokollen, TCP/IP, gjorde det mulig for ulike nettverk å kommunisere med hverandre og ble grunnlaget for det moderne internett.</p>
+            </div>
+        </div>
+        <div class="timeline-item" onclick="toggleInfo('info3')">
+            <h4>1990-tallet</h4>
+            <p>World Wide Web ble introdusert og revolusjonerte internettbruken.</p>
+            <div id="info3" class="extra-info">
+                <p>Tim Berners-Lee skapte World Wide Web, som gjorde internett lettere tilgjengelig for folk gjennom grafiske nettsider og nettlesere.</p>
+            </div>
+        </div>
+        <div class="timeline-item" onclick="toggleInfo('info4')">
+            <h4>2000-tallet</h4>
+            <p>Sosiale medier og nettjenester som Facebook og YouTube ble lansert.</p>
+            <div id="info4" class="extra-info">
+                <p>Internett ble mer sosialt, med tjenester som Facebook, YouTube og Twitter som revolusjonerte måten folk delte informasjon og interagerte på nettet.</p>
+            </div>
+        </div>
+        <div class="timeline-item" onclick="toggleInfo('info5')">
+            <h4>2010-tallet</h4>
+            <p>Smarttelefoner og 4G-nettverk forandret hvordan vi bruker internett.</p>
+            <div id="info5" class="extra-info">
+                <p>Smarttelefoner og raskere internettforbindelser gjorde det mulig for folk å være tilkoblet nettet nesten overalt, og apper ble en stor del av hverdagen.</p>
+            </div>
+        </div>
+
+        
+    </section>
+
+    <script>
+        function toggleInfo(id) {
+            var info = document.getElementById(id);
+            info.classList.toggle('show');
+        }
+
+        document.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            sections.forEach(section => {
+                if (scrollPosition > section.offsetTop + 50) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+
+    </script>
+
+
+</body>
+</html>

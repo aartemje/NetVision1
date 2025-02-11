@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hvordan fungerer Internett?</title>
+    <link rel="icon" type="image/png" href="Techonology.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Sentrer innhold horisontalt */
+        }
+        header {
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .content {
+            padding: 40px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px; /* Sett en maks bredde for innholdet */
+        }
+        h1 {
+            color: #ff9800;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #ff9800;
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        img {
+            width: 100%;
+            max-width: 800px; /* Begrens bildet til 800px bredt på større skjermer */
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: block; /* Sikrer at bildene vises som blokkelementer */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .article-text {
+            line-height: 1.8;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff9800;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        .cta-button:hover {
+            background-color: #e68900;
+        }
+        /* Sentrering av knappen */
+        .cta-button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        /* Hjem-knapp stil */
+        .home-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .home-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Media query for større skjermer (PC) */
+        @media (min-width: 1024px) {
+            img {
+                max-width: 800px; /* Reduserer bildestørrelsen på større skjermer */
+            }
+        }
+
+        /* Media query for mindre skjermer (mobil og nettbrett) */
+        @media (max-width: 1024px) {
+            img {
+                max-width: 100%; /* Bildene vil fylle hele bredden på mindre skjermer */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hvordan fungerer Internett?</h1>
+</header>
+
+<!-- Hjem knapp -->
+<a href="artikler.html" class="home-button" onclick="scrollToTop()">Gå tilbake til artikler</a>
+
+<div class="content">
+    <h2>Hva er Internett?</h2>
+    <p class="article-text">Internett er et globalt nettverk av datamaskiner og enheter som er koblet sammen via forskjellige kommunikasjonskanaler, som for eksempel fiberoptiske kabler, trådløse forbindelser og satellitter. Det gir tilgang til informasjon, applikasjoner, og muligheter for kommunikasjon gjennom et system av servere og protokoller.</p>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuoph7NBZE2tZ6nolhAZe2s0cXkWxe7RXfSw&s" alt="Hvordan internett fungerer">
+    
+    <h2>Hvordan er Internett strukturert?</h2>
+    <p class="article-text">Internett består av flere deler, som hver spiller en viktig rolle i å sikre effektiv kommunikasjon. For eksempel har vi:</p>
+
+    <ul>
+        <li><strong>Servere</strong> - Disse lagrer data og applikasjoner som brukes på nettet.</li>
+        <li><strong>Klienter</strong> - Dette er datamaskiner eller enheter som får tilgang til data på internett.</li>
+        <li><strong>Protokoller</strong> - Kommunikasjonsregler som sørger for at data kan sendes effektivt mellom enheter (f.eks. HTTP, HTTPS).</li>
+    </ul>
+    
+    <img src="https://ipprivat.com/wp-content/uploads/Ce-tipuri-de-servere-exista.jpg" alt="Servere og protokoller">
+
+    <h2>Hvordan fungerer kommunikasjon over Internett?</h2>
+    <p class="article-text">Når du besøker en nettside, sendes en forespørsel fra datamaskinen din (klienten) til en server som lagrer nettsiden. Serveren sender deretter tilbake informasjonen til datamaskinen din, som blir vist i nettleseren. Denne prosessen skjer raskt, takket være internettets underliggende infrastruktur.</p>
+
+    <img src="https://cdn.pixabay.com/photo/2020/02/15/17/02/communication-4851454_960_720.jpg" alt="Kommunikasjon over Internett">
+
+    <h2>Hva er Internett-protokoller?</h2>
+    <p class="article-text">Internett bruker flere protokoller for å sikre effektiv og sikker kommunikasjon. Noen av de mest kjente protokollene er:</p>
+    <ul>
+        <li><strong>TCP/IP:</strong> Denne protokollen sørger for at data deles opp i pakker og sendes riktig over nettet.</li>
+        <li><strong>DNS:</strong> Domain Name System (DNS) oversetter domenenavn (som google.com) til IP-adresser, som datamaskiner bruker for å kommunisere.</li>
+        <li><strong>HTTP/HTTPS:</strong> Hypertext Transfer Protocol (og den sikre versjonen HTTPS) gjør at nettsider kan lastes inn i nettleseren din.</li>
+    </ul>
+
+    <img src="https://vidabytes.com/wp-content/uploads/2020/05/C%C3%B3mo-funciona-el-internet-2.jpg" alt="Internett-protokoller">
+
+    <h2>Internett i dag</h2>
+    <p class="article-text">Internett har utviklet seg enormt de siste årene, og i dag er det mer enn 4,5 milliarder mennesker som har tilgang til det. Det har revolusjonert måten vi kommuniserer, handler, lærer og arbeider på. Internett gir oss muligheten til å gjøre nesten hva som helst, uansett hvor vi er i verden.</p>
+
+    <img src="https://abcdn.no/bytt/cms/articles/hvem-kan-fa-fiber-fiber-globe.png" alt="Internett i dag">
+
+    <!-- Sentrer knappen -->
+    <div class="cta-button-container">
+        <a href="https://no.wikipedia.org/wiki/Internett" class="cta-button" target="_blank">Utforsk mer om Internett!</a>
+    </div>
+</div>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Smooth scroll to the top
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
+
+

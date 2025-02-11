@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetVision</title>
+    <link rel="icon" type="image/png" href="Techonology.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hjem-knapp */
+        .home-button {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .home-button svg {
+            width: 40px;
+            height: 40px;
+            fill: #ff9800;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .home-button:active svg {
+            transform: scale(1.2);
+        }
+
+        /* Parallax effekt */ 
+        .parallax {
+            background-image: url("https://image.forskning.no/2416573.webp?imageId=2416573&x=0.00&y=0.00&cropw=100.00&croph=100.00&width=2116&height=1122&format=webp");
+            min-height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .parallax h1 {
+            font-size: 48px;
+            color: yellow;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .articles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .article {
+            background: #1a1a1a;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff9800;
+        }
+
+        .article img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .article h3 {
+            padding: 15px;
+            color: #ff9800;
+            font-size: 22px;
+        }
+
+        .article p {
+            padding: 0 15px 15px;
+            color: #e0e0e0;
+            font-size: 16px;
+        }
+
+        /* Responsivt design */
+        @media only screen and (max-width: 768px) {
+            .articles-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Logg ut/registrer-knapp */
+        .auth-button {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 87, 34, 1);
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+        }
+
+        .auth-button svg {
+            width: 24px;
+            height: 24px;
+            fill: #e8eaed;
+        }
+
+        #dagens-nytt {
+    background: #1a1a1a;
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#dagens-nytt h2 {
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+#dagens-nytt p {
+    color: #e0e0e0;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.button-link {
+    background: #ff9800;
+    color: #121212;
+    padding: 15px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.button-link:hover {
+    background: #e68900;
+    box-shadow: 0 0 10px #ff9800;
+}
+
+        
+
+    </style>
+</head>
+<body>
+
+    <button class="home-button" onclick="location.href='index.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+        </svg>
+    </button>
+
+    <div class="parallax">
+        <h1>Utforsk Artikler</h1>
+    </div>
+
+    <div class="articles-container">
+        <div class="article" onclick="location.href='internett.html'">
+            <img src="internet.jpg" alt="Hvordan fungerer internett">
+            <h3>Hvordan fungerer internett?</h3>
+            <p>En dypere forklaring av hvordan internett er bygget opp og fungerer.</p>
+        </div>
+
+        <div class="article" onclick="location.href='kommunikasjon.html'">
+            <img src="communication.jpg" alt="Internett og kommunikasjon">
+            <h3>Internett og kommunikasjon</h3>
+            <p>Hvordan internett har revolusjonert kommunikasjon.</p>
+        </div>
+
+        <div class="article" onclick="location.href='lagring.html'">
+            <img src="cloud.jpg" alt="Lagring i skyen">
+            <h3>Lagring i skyen</h3>
+            <p>Hvordan skylagring fungerer og hvorfor det er viktig.</p>
+        </div>
+
+        <div class="article" onclick="location.href='sosialemedier.html'">
+            <img src="socialmedia.jpg" alt="Sosiale medier">
+            <h3>Sosiale medier</h3>
+            <p>Påvirkningen av sosiale medier i dagens samfunn.</p>
+        </div>
+
+        <div class="article" onclick="location.href='ai.html'">
+            <img src="ai.jpg" alt="Kunstig intelligens">
+            <h3>Kunstig intelligens</h3>
+            <p>Hvordan AI utvikler seg og påvirker vår hverdag.</p>
+        </div>
+
+        <div class="article" onclick="location.href='datasikkerhet.html'">
+            <img src="cybersecurity.jpg" alt="Datasikkerhet">
+            <h3>Datasikkerhet</h3>
+            <p>Viktigheten av cybersikkerhet i en digital verden.</p>
+        </div>
+    </div>
+
+    <button class="auth-button" id="authButton" onclick="toggleAuth()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
+        </svg>
+        Registrer
+    </button>
+    <hr>
+
+    <section id="dagens-nytt">
+        <h2>Dagens Nytt</h2>
+        <p>Hold deg oppdatert med de siste nyhetene! Klikk på linken under for å lese mer.</p>
+        <a href="dagens-nytt.html" class="button-link">Les Dagens Nytt</a>
+    </section>
+    
+
+    
+
+    <script>
+       
+        let isLoggedIn = false;  
+
+        function toggleAuth() {
+            if (isLoggedIn) {
+                alert("Du er logget ut!");
+                isLoggedIn = false;  
+                document.getElementById('authButton').textContent = "Registrer";  
+                document.getElementById('authButton').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>Registrer`;
+            } else {
+                alert("Du er registrert!");
+                isLoggedIn = true;  
+                document.getElementById('authButton').textContent = "Logg ut";  
+                document.getElementById('authButton').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>Logg ut`;
+            }
+        }
+
+       
+        window.addEventListener('scroll', function() {
+            let scrollY = window.scrollY;
+            let button = document.getElementById('authButton');
+            let scale = Math.max(0.4, 1 - scrollY / 500); 
+            button.style.transform = `scale(${scale})`;
+            button.style.opacity = scale; 
+        });
+    </script>
+
+</body>
+
+
+</html>
+

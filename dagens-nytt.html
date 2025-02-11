@@ -1,0 +1,250 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetVision</title>
+    <link rel="icon" type="image/png" href="Techonology.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            color: #f0f0f0;
+            line-height: 1.6;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #dddddd;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #bbbbbb;
+            margin-bottom: 20px;
+        }
+
+        .parallax {
+            background: url('ai_dark.jpg') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+            margin-top: 20px;
+        }
+
+        .news-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .news-card {
+            background: #282828;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15);
+        }
+
+        .news-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .image-container img {
+            width: 70%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        ul {
+            text-align: left;
+            color: #bbbbbb;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .parallax {
+    background-image: url('https://www.lockheedmartin.com/content/dam/lockheed-martin/eo/photo/ai-ml/artificial-intelligence-1920.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+    color: red;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blå farge */
+    color: #ffffff;
+    text-decoration: none; /* Fjerner understrek */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px; /* Rundede hjørner */
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3; /* Mørkere blå ved hover */
+}
+
+.home-button:hover {
+            background-color: #0056b3;
+        }
+
+        .countdown {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .clock-icon {
+            font-size: 40px;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1 class="title">Dagens Nytt</h1>
+    <div class="parallax">Den nye AI-revolusjonen!</div>
+    <a href="artikler.html" class="home-button">Tilbake til artikler</a>
+
+    <div class="clock-icon">🕒</div>
+    <div class="countdown" id="countdown"></div>
+    
+
+    
+    <section class="news-section">
+        <h2>AI utvikler seg raskere enn noensinne</h2>
+        <p>AI-industrien vokser i rekordfart, og nye modeller utfordrer stadig det etablerte.</p>
+        <div class="news-card">
+            <img src="deepseek_ai.jpg" alt="AI-modell">
+            <p><b>Ny AI-teknologi</b> lover raskere prosessering og bedre forståelse av kontekst.</p>
+        </div>
+        <h3>Hva er nytt i 2025?</h3>
+        <ul>
+            <li><b>Mer nøyaktige språkmodeller</b>: AI forstår nå lange tekster bedre enn før.</li>
+            <li><b>Optimalisert for ytelse</b>: Nyere maskinvare utnyttes mer effektivt.</li>
+            <li><b>Bedre støtte for programmering</b>: AI kan nå forutsi kodefeil mer presist.</li>
+        </ul>
+        <div class="news-card">
+            <p>Forskere mener AI vil bli en viktigere del av hverdagen enn noensinne.</p>
+        </div>
+    </section>
+
+    <!-- Ny seksjon om Deepseek -->
+    <section class="news-section">
+        <h2>Deepseek: Fremtidens AI-teknologi</h2>
+        <p>Deepseek er en banebrytende AI-teknologi som kombinerer avansert maskinlæring og dyp læring for å forbedre menneskelig interaksjon med teknologi. Dette systemet er laget for å optimalisere både hastighet og nøyaktighet, noe som kan revolusjonere flere bransjer.</p>
+        <div class="news-card">
+            <img src="deepseek_vs_gpt.jpg" alt="Deepseek AI">
+            <p><b>Deepseek tilbyr:</b> Forbedret analyse av komplekse data, raskere respons og mer presis forståelse av brukernes behov.</p>
+        </div>
+        <h3>Hva gjør Deepseek spesielt?</h3>
+        <ul>
+            <li><b>Intelligent analyse</b>: Deepseek kan analysere store mengder data raskt og nøyaktig.</li>
+            <li><b>Forbedret maskinlæring</b>: Med kontinuerlig læring tilpasser Deepseek seg raskt til nye situasjoner.</li>
+            <li><b>Fleksible applikasjoner</b>: Teknologien kan brukes på tvers av mange industrier, fra helsevesen til finans.</li>
+        </ul>
+    </section>
+
+    <div class="container">
+        <h1>Deepseek: En Trussel mot USAs ChatGPT?</h1>
+        <p>Den kinesiske AI-plattformen Deepseek har raskt vokst frem som en av de mest avanserte konkurrentene til ChatGPT, utviklet av OpenAI i USA. Med sin fokus på effektivitet, nøyaktighet og språklig forståelse, utfordrer Deepseek det amerikanske AI-hegemoniet og kan potensielt endre dynamikken i det globale AI-markedet.</p>
+        
+        <h2>Hvorfor er Deepseek en trussel?</h2>
+        
+      <p>Deepseek kan være en trussel fordi deres avanserte språkmodell har potensial til å overgå ChatGPT i presisjon og kontekstforståelse, spesielt på kinesisk. Med færre reguleringshindringer i Kina kan de utvikle og integrere AI-løsninger raskt i både lokale og globale markeder. Deres sterke posisjon i Kina, kombinert med en økende økonomisk og geopolitisk innflytelse, gir dem en mulighet til å utfordre amerikanske tech-selskaper som OpenAI, Google og Meta, og potensielt dominere det globale AI-markedet.</p>
+        <h2>Hva betyr dette for fremtiden?</h2>
+        <p>Hvis Deepseek fortsetter å utvikle seg i samme tempo, kan den kinesiske AI-plattformen bli en reell utfordrer til ChatGPT globalt. Dette kan føre til en splittelse i AI-markedet, hvor vestlige og kinesiske AI-modeller opererer uavhengig av hverandre – en utvikling som speiler den større teknologiske og økonomiske konkurransen mellom USA og Kina.</p>
+        <p>I en verden der AI blir stadig viktigere, kan Deepseek være starten på en ny fase i det globale AI-kappløpet. Spørsmålet er ikke om den vil utfordre ChatGPT – men hvor langt den vil gå.</p>
+    </div>
+   
+
+
+    <div class="image-container">
+        <img src="deepseek_training.jpg" alt="Fremtidens AI">
+    </div>
+
+    <section class="news-section">
+        <h2>Er du klar for fremtiden?</h2>
+        <p>Eksperter mener AI vil endre verden på måter vi ennå ikke forstår.</p>
+    </section>
+
+    <script>
+function updateCountdown() {
+            const now = new Date();
+            let nextUpdate = new Date();
+            nextUpdate.setHours(10, 0, 0, 0);
+            
+            if (now >= nextUpdate) {
+                nextUpdate.setDate(nextUpdate.getDate() + 1);
+            }
+            
+            const timeDiff = nextUpdate - now;
+            const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeDiff / 1000) % 60);
+            
+            document.getElementById("countdown").innerText = `Neste nyhet om: ${hours}t ${minutes}m ${seconds}s`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+
+    </script>
+</body>
+</html>
+
+
+
